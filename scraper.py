@@ -100,7 +100,7 @@ soup = BeautifulSoup(html, "lxml")
 block = soup.find('div', 'article')
 links = block.find_all('a', href = True)
 for link in links:
-    if 'Payments to Suppliers Report (CSV)' in link.text:
+    if 'Payments to Suppliers' in link.text:
         if '.csv' in link['href']:
             url = 'https://www.portsmouth.gov.uk' + link['href']
             csvfile = link.text.split('-')[-1].replace(u'\xa0', ' ').split(' ')
